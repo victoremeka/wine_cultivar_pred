@@ -1,0 +1,53 @@
+Name: Victor Emeka
+Matric Number: 23cg034065
+Machine Learning Algorithm Used: Random Forest Classifier
+Model Persistence Method: Joblib
+
+Live URL of the Hosted Application:
+[To be added after deployment]
+
+GitHub Repository Link:
+[To be added after pushing to GitHub]
+
+---
+
+DEPLOYMENT INSTRUCTIONS:
+
+Option 1 - Streamlit Cloud (Recommended):
+1. Push project to GitHub
+2. Go to share.streamlit.io
+3. Sign in with GitHub
+4. Click "New app"
+5. Select repository: WineCultivar_Project_victoremeka_23cg034065
+6. Set main file: app.py
+7. Click "Deploy"
+
+Option 2 - Render.com:
+1. Create account on Render.com
+2. Connect GitHub repository
+3. Create new Web Service
+4. Set build command: pip install -r requirements.txt
+5. Set start command: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
+6. Deploy
+
+---
+
+PROJECT SUMMARY:
+
+Algorithm: Random Forest Classifier
+Features: 6 selected chemical properties (alcohol, malic_acid, ash, total_phenols, flavanoids, color_intensity)
+Dataset: UCI Wine Dataset (178 samples, 3 classes)
+Preprocessing: StandardScaler for feature normalization
+Train-Test Split: 80-20 with stratification
+Framework: Streamlit
+Model Persistence: Joblib
+
+Expected Performance:
+- Accuracy: ~95-98%
+- Precision (weighted): ~96-99%
+- Recall (weighted): ~95-98%
+- F1-Score (weighted): ~96-98%
+
+---
+
+SUBMISSION DATE: January 21, 2026

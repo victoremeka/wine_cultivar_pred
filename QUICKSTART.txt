@@ -1,0 +1,103 @@
+# Wine Cultivar Prediction System - Quick Start Guide
+
+## 🚀 Getting Started in 3 Steps
+
+### Step 1: Train the Model
+1. Navigate to the `model` folder
+2. Open `model_building.ipynb` in Jupyter Notebook
+3. Run all cells to train the model
+4. This will generate:
+   - `wine_cultivar_model.pkl` (trained model)
+   - `scaler.pkl` (feature scaler)
+
+### Step 2: Install Dependencies
+```bash
+# Run the setup script (Linux/Mac)
+chmod +x setup.sh
+./setup.sh
+
+# OR install manually
+pip install -r requirements.txt
+```
+
+### Step 3: Run the Application
+```bash
+streamlit run app.py
+```
+
+Then open your browser to: http://localhost:8501
+
+## 📝 Testing the Application
+
+### Sample Wine Data to Test:
+
+**Sample 1 (Cultivar 0):**
+- Alcohol: 13.2
+- Malic Acid: 2.0
+- Ash: 2.3
+- Total Phenols: 2.8
+- Flavanoids: 3.0
+- Color Intensity: 5.5
+
+**Sample 2 (Cultivar 1):**
+- Alcohol: 12.3
+- Malic Acid: 3.0
+- Ash: 2.1
+- Total Phenols: 1.8
+- Flavanoids: 1.2
+- Color Intensity: 4.5
+
+**Sample 3 (Cultivar 2):**
+- Alcohol: 13.5
+- Malic Acid: 1.5
+- Ash: 2.5
+- Total Phenols: 3.2
+- Flavanoids: 4.5
+- Color Intensity: 7.0
+
+## 🌐 Deployment
+
+### Option 1: Streamlit Cloud (Easiest)
+1. Push code to GitHub
+2. Visit: https://share.streamlit.io
+3. Connect repository
+4. Deploy!
+
+### Option 2: Render.com
+1. Sign up at Render.com
+2. Create new Web Service
+3. Connect GitHub repo
+4. Deploy
+
+## 📊 Project Structure
+```
+WineCultivar_Project_victoremeka_23cg034065/
+├── app.py                              # Main application
+├── requirements.txt                     # Dependencies
+├── README.md                           # Full documentation
+├── QUICKSTART.txt                      # This file
+├── setup.sh                            # Setup script
+├── WineCultivar_hosted_webGUI_link.txt # Deployment info
+└── model/
+    ├── model_building.ipynb            # Model training
+    ├── wine_cultivar_model.pkl         # Trained model (after training)
+    └── scaler.pkl                      # Scaler (after training)
+```
+
+## ⚠️ Troubleshooting
+
+**Problem:** Model files not found
+**Solution:** Run all cells in model_building.ipynb first
+
+**Problem:** Streamlit not starting
+**Solution:** Try: `streamlit run app.py --server.port 8080`
+
+**Problem:** Package errors
+**Solution:** Upgrade pip: `pip install --upgrade pip`
+
+## 📧 Need Help?
+
+Check the full README.md for detailed instructions and troubleshooting.
+
+---
+Student: Victor Emeka | Matric: 23cg034065
