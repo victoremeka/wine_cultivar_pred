@@ -3,7 +3,6 @@ Wine Cultivar Origin Prediction System
 Web Application using Streamlit
 
 Student: Victor Emeka
-Matric: 23cg034065
 Algorithm: Random Forest Classifier
 """
 
