@@ -4,10 +4,10 @@ Machine Learning Algorithm Used: Random Forest Classifier
 Model Persistence Method: Joblib
 
 Live URL of the Hosted Application:
-[To be added after deployment]
+https://winecultivarpred-eh7sund5ffmk4tj6cevz33.streamlit.app/
 
 GitHub Repository Link:
-[To be added after pushing to GitHub]
+https://github.com/victoremeka/wine_cultivar_pred
 
 ---
 
