@@ -78,14 +78,39 @@ st.markdown("""
 def load_model_and_scaler():
     """Load the trained model and scaler"""
     try:
-        model_path = Path(__file__).parent / 'model' / 'wine_cultivar_model.pkl'
-        scaler_path = Path(__file__).parent / 'model' / 'scaler.pkl'
+        # Try multiple path strategies
+        base_dir = Path(__file__).parent
+        
+        # Strategy 1: Relative to app.py
+        model_path = base_dir / 'model' / 'wine_cultivar_model.pkl'
+        scaler_path = base_dir / 'model' / 'scaler.pkl'
+        
+        # Strategy 2: If not found, try current working directory
+        if not model_path.exists():
+            model_path = Path('model/wine_cultivar_model.pkl')
+            scaler_path = Path('model/scaler.pkl')
+        
+        # Debug info
+        st.sidebar.info(f"📂 Loading from: {model_path.parent.absolute()}")
+        
+        if not model_path.exists():
+            st.error(f"❌ Model file not found at: {model_path.absolute()}")
+            st.error(f"📂 Current directory: {Path.cwd()}")
+            st.error(f"📂 Script directory: {base_dir.absolute()}")
+            st.error(f"📁 Directory contents: {list(base_dir.glob('*'))}")
+            if (base_dir / 'model').exists():
+                st.error(f"📁 Model directory contents: {list((base_dir / 'model').glob('*'))}")
+            return None, None
         
         model = joblib.load(model_path)
         scaler = joblib.load(scaler_path)
+        st.sidebar.success("✅ Model loaded successfully!")
         return model, scaler
     except Exception as e:
         st.error(f"Error loading model: {str(e)}")
+        st.error(f"Error type: {type(e).__name__}")
+        import traceback
+        st.error(f"Traceback: {traceback.format_exc()}")
         return None, None
 
 # Feature information
